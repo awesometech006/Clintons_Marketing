@@ -1,0 +1,160 @@
+/* --- WhyChooseUs.css --- */
+
+.why-section {
+    background-color: #ffffff;
+    /* White background */
+    padding: 6rem 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+}
+
+.why-container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-headline {
+    font-size: 2.25rem;
+    /* text-4xl */
+    font-weight: 800;
+    /* font-extrabold */
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    text-align: center;
+    color: #111827;
+    /* Dark text */
+    margin-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+    .why-headline {
+        font-size: 3rem;
+        /* text-5xl */
+    }
+}
+
+/* --- The Feature Grid --- */
+.why-grid {
+    display: grid;
+    gap: 1.5rem;
+    /* gap-6 */
+}
+
+@media (min-width: 640px) {
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- The Animated Card --- */
+.why-card {
+    position: relative;
+    border-radius: 0.75rem;
+    /* rounded-xl */
+    overflow: hidden;
+    /* This padding (1px) is a trick to hold space for the border.
+    The inner div's background will cover the card.
+  */
+    padding: 1px;
+}
+
+/* --- The Animated Gradient Border --- */
+.why-card::before {
+    content: "";
+    position: absolute;
+    /* Make it bigger than the card to allow for rotation */
+    inset: -100%;
+    z-index: 1;
+
+    /* The Instagram gradient as a spinning cone */
+    background-image: conic-gradient(from 0deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #feda75
+            /* Loop back to yellow */
+        );
+
+    /* Animation: Start invisible */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: rotate-border 4s linear infinite;
+}
+
+/* --- The Card Content --- */
+.why-card-inner {
+    position: relative;
+    z-index: 2;
+    /* Sits on top of the gradient */
+    background-color: #f9f9f9;
+    /* Light gray card background */
+    border-radius: 0.7rem;
+    /* Slightly smaller than the parent */
+    padding: 2rem;
+    height: 100%;
+    /* Make all cards the same height */
+
+    /* Basic lift transition */
+    transition: transform 0.3s ease;
+}
+
+/* --- === HOVER EFFECT === --- */
+.why-card:hover::before {
+    opacity: 1;
+    /* 1. Show the rotating border */
+}
+
+.why-card:hover .why-card-inner {
+    transform: translateY(-4px);
+    /* 2. Lift the inner card */
+    background-color: #ffffff;
+    /* 3. Make the card white on hover */
+}
+
+/* --- Keyframes for the rotating border --- */
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Card Content Styling --- */
+.why-card-icon {
+    color: #d62976;
+    /* Instagram Pink */
+    margin-bottom: 1rem;
+}
+
+.why-card-icon svg {
+    width: 2.5rem;
+    /* 40px */
+    height: 2.5rem;
+}
+
+.why-card-title {
+    font-size: 1.25rem;
+    /* text-xl */
+    font-weight: 600;
+    /* font-semibold */
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.why-card-desc {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4b5563;
+    /* text-gray-600 */
+}

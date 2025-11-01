@@ -1,0 +1,144 @@
+/* --- TheVault.css --- */
+
+.vault-section {
+background-color: #000000;
+    /* A very dark, near-black background */
+    padding-top: 0rem;
+    /* CHANGED */
+    padding-bottom: 6rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+    /* Needed for the background glow */
+    text-align: center;
+}
+
+.vault-container {
+    max-width: 48rem;
+    /* max-w-3xl */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    /* Sits on top of the glow */
+    z-index: 10;
+}
+
+/* --- Animation 1: Subtle Float --- */
+.vault-content-float {
+    animation: subtle-float 8s ease-in-out infinite;
+}
+
+@keyframes subtle-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+        /* Gently lifts up */
+    }
+}
+
+/* --- Animation 2: Background Pulse --- */
+.vault-background-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+
+    /* Centering trick */
+    transform: translate(-50%, -50%);
+
+    /* Soft radial gradient with Instagram colors */
+    background-image: radial-gradient(circle,
+            rgba(214, 41, 118, 0.2),
+            /* Pink */
+            rgba(150, 47, 191, 0.1),
+            /* Purple */
+            transparent 70%);
+
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse-glow 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+        /* "Breathes" out */
+    }
+}
+
+/* --- Content Styling --- */
+.vault-headline {
+    font-size: 2.25rem;
+    /* text-4xl */
+    font-weight: 800;
+    /* font-extrabold */
+    color: #ffffff;
+    letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+    .vault-headline {
+        font-size: 3rem;
+        /* text-5xl */
+    }
+}
+
+.vault-subheadline {
+    font-size: 1.5rem;
+    /* text-2xl */
+    font-weight: 500;
+    /* font-medium */
+    color: #feda75;
+    /* Instagram Yellow for accent */
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.vault-description {
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+    /* text-lg */
+    line-height: 1.75;
+    color: #d1d5db;
+    /* text-gray-300 */
+}
+
+/* --- CTA Button --- */
+.vault-cta-container {
+    margin-top: 2.5rem;
+}
+
+.vault-cta-btn {
+    /* Re-using the gradient button style */
+    background-image: linear-gradient(45deg, #fa7e1e, #d62976);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(214, 41, 118, 0.5);
+    /* Pink shadow */
+}
+
+.vault-cta-btn:hover {
+    opacity: 0.9;
+}

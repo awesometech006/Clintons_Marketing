@@ -1,0 +1,115 @@
+/* --- BuiltForEveryone.css --- */
+.built-section {
+    background-color: #ffffff;
+    padding: 6rem 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+
+.built-container {
+    max-width: 48rem;
+    /* max-w-3xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.built-headline {
+    font-size: 2.25rem;
+    /* text-4xl */
+    font-weight: 800;
+    /* font-extrabold */
+    color: #111827;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .built-headline {
+        font-size: 3rem;
+        /* text-5xl */
+    }
+}
+
+/* --- Tab Navigation --- */
+.built-tabs-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e5e7eb;
+    /* light gray border */
+}
+
+.built-tab-btn {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6b7280;
+    /* gray-500 */
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    flex: 1;
+    max-width: 200px;
+}
+
+.built-tab-btn.active {
+    color: #d62976;
+    /* Instagram Pink */
+}
+
+/* --- Animated Glider (Underline) --- */
+.built-tab-glider {
+    position: absolute;
+    bottom: -2px;
+    /* Sits on top of the border */
+    height: 4px;
+    width: 33.33%;
+    /* 1/3rd of the container */
+    background-image: linear-gradient(45deg, #fa7e1e, #d62976);
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Glider positioning based on activeTab class */
+.built-tab-glider.entrepreneurs {
+    left: 0;
+}
+
+.built-tab-glider.creators {
+    left: 33.33%;
+}
+
+.built-tab-glider.agencies {
+    left: 66.66%;
+}
+
+/* --- Tab Content --- */
+.built-tab-content {
+    margin-top: 2rem;
+    min-height: 60px;
+    /* Prevents layout shift */
+}
+
+.built-tab-content p {
+    font-size: 1.25rem;
+    /* text-xl */
+    color: #374151;
+    /* gray-700 */
+    line-height: 1.75;
+    /* Simple fade-in animation for content change */
+    animation: content-fade-in 0.5s ease;
+}
+
+@keyframes content-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

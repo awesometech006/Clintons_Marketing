@@ -8,35 +8,41 @@ function Header() {
         {/* Logo Section */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="flex items-center space-x-1">
-            <span className="text-[#a8ff60] font-bold text-lg">90 Caliber</span>
+            <span className="text-[#feda75] font-bold text-lg">90 Caliber</span>
           </div>
         </Link>
 
-        {/* Nav Links */}
+        {/* Nav Links - UPDATED */}
         <nav className="flex items-center space-x-8">
           <Link
-            to="/templates"
-            className="text-sm font-medium hover:text-[#a8ff60] transition-colors"
+            to="/about"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
           >
-            Templates
+            About
+          </Link>
+          <Link
+            to="/creator"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
+          >
+            Creator
           </Link>
           <Link
             to="/pricing"
-            className="text-sm font-medium hover:text-[#a8ff60] transition-colors"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
           >
             Pricing
           </Link>
           <Link
-            to="/faq"
-            className="text-sm font-medium hover:text-[#a8ff60] transition-colors"
+            to="/community"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
           >
-            FAQ
+            Community
           </Link>
           <Link
-            to="/contact"
-            className="text-sm font-medium hover:text-[#a8ff60] transition-colors"
+            to="/roadmap"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
           >
-            Contact
+            Future Roadmap
           </Link>
         </nav>
       </div>

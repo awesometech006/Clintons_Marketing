@@ -10,3 +10,375 @@
   display: inline-flex;
   animation: marqueeScroll 20s linear infinite;
 }
+
+
+/* --- HeroSection.css --- */
+
+/* 1. Hero Section Layout */
+.hero-section {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  /* Opacity removed from here to make animations visible */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 90%;
+  max-width: 1100px;
+  /* Container max-width */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 6rem 1.5rem;
+  /* py-24 px-6 */
+}
+
+/* 2. Hero Content Typography */
+.hero-content h1 {
+  font-size: 2.25rem;
+  /* text-4xl */
+  line-height: 1.2;
+  font-weight: 800;
+  /* font-extrabold */
+  letter-spacing: -0.025em;
+  /* tracking-tighter */
+}
+
+.hero-content p {
+  color: #d1d5db;
+  /* text-gray-300 */
+  margin-top: 1.5rem;
+  /* mt-6 */
+  font-size: 1.125rem;
+  /* text-lg */
+  line-height: 1.75;
+  max-width: 48rem;
+  /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3. Hero Buttons */
+.hero-buttons {
+  margin-top: 2.5rem;
+  /* mt-10 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* gap-4 */
+}
+
+.btn {
+  font-weight: 700;
+  /* font-bold */
+  padding: 0.75rem 2rem;
+  /* px-8 py-3 */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  transition: opacity 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    /* 8px space between icon and text */
+}
+/* --- ADD THIS NEW RULE --- */
+.btn-icon {
+  width: 1.125rem;
+  /* 18px */
+  height: 1.125rem;
+  stroke-width: 2.5;
+  /* Makes the arrow line a bit thicker */
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  /* CHANGED: Replaced solid color with an Instagram gradient */
+  background-image: linear-gradient(45deg, #fa7e1e, #d62976);
+  color: #fff;
+  /* CHANGED: Text color to white for readability */
+}
+
+.btn-secondary {
+  background-color: rgba(55, 65, 81, 0.5);
+  /* bg-gray-800/50 */
+  color: #fff;
+  border: 1px solid #4b5563;
+  /* border border-gray-700 */
+}
+
+/* 4. Animated Background Wrapper */
+.anim-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 5. Background Grid */
+.anim-bg-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* CHANGED: Replaced dark gradient with the full Instagram gradient */
+  background-image: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  opacity: 0.7;
+  /* Kept opacity to keep it subtle */
+}
+
+.anim-bg-grid-inner {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: pan-background 18s linear infinite alternate;
+}
+
+/* 6. Background Floating Shapes */
+.anim-bg-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.1;
+  mix-blend-mode: screen;
+}
+
+.shape-1 {
+  top: -2.5rem;
+  left: -2.5rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: #feda75;
+  /* CHANGED: Was lime green, now Instagram yellow */
+  border-radius: 9999px;
+  /* rounded-full */
+  animation: float-1 10s ease-in-out infinite alternate;
+}
+
+.shape-2 {
+  bottom: -2.5rem;
+  right: -2.5rem;
+  width: 12rem;
+  height: 12rem;
+  background-color: #3b82f6;
+  /* Kept blue, fits the palette */
+  border-radius: 9999px;
+  /* rounded-full */
+  animation: float-2 12s ease-in-out infinite alternate-reverse;
+}
+
+.shape-3 {
+  top: 25%;
+  left: 25%;
+  width: 5rem;
+  height: 5rem;
+  background-color: #962fbf;
+  /* CHANGED: Tweaked purple to be more on-brand */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  animation: float-3 8s ease-in-out infinite alternate;
+}
+
+/* ... after .shape-3 ... */
+
+.shape-4 {
+  bottom: 20%;
+  left: 10%;
+  width: 5rem;
+  /* 80px */
+  height: 5rem;
+  /* 80px */
+  background-color: #d62976;
+  /* Instagram Pink */
+  border-radius: 9999px;
+  /* rounded-full */
+  animation: float-4 11s ease-in-out infinite alternate;
+}
+
+.shape-5 {
+  top: 15%;
+  right: 15%;
+  width: 3rem;
+  /* 48px */
+  height: 3rem;
+  /* 48px */
+  background-color: #4f5bd5;
+  /* Instagram Blue */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  animation: float-5 9s ease-in-out infinite alternate-reverse;
+}
+
+/* 7. Scene Icon Transitions */
+.anim-bg-scene-icons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+}
+
+.anim-bg-scene-icon {
+  position: absolute;
+  font-size: 3rem;
+  color: #d62976;
+  /* CHANGED: Was lime green, now Instagram pink */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.anim-bg-scene-icon.active {
+  opacity: 0.25;
+  transform: scale(1);
+}
+/* ADD THIS NEW RULE */
+.anim-bg-icon {
+  width: 3.5rem;
+  /* 56px */
+  height: 3.5rem;
+  /* 56px */
+}
+
+/* 8. Keyframes */
+@keyframes pan-background {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes float-1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(20px, 30px) scale(1.05);
+  }
+}
+
+@keyframes float-2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-30px, -20px) scale(1.03);
+  }
+}
+
+@keyframes float-3 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(15px, -10px) rotate(5deg);
+  }
+}
+/* ... after @keyframes float-3 ... */
+
+@keyframes float-4 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(10px, 25px) rotate(10deg);
+  }
+}
+
+@keyframes float-5 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-15px, -10px) scale(1.1);
+  }
+}
+
+/* 9. Responsive Media Queries */
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+    /* sm:flex-row */
+  }
+
+  .btn {
+    width: auto;
+    /* sm:w-auto */
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-content h1 {
+    font-size: 3.75rem;
+    /* md:text-6xl */
+  }
+
+  .hero-content h1 br {
+    display: block;
+    /* md:block */
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+    /* md:text-xl */
+  }
+
+  .hero-content {
+    padding-top: 8rem;
+    /* md:py-32 */
+    padding-bottom: 8rem;
+  }
+}
+
+/* Hide <br> on mobile */
+.hero-content h1 br {
+  display: none;
+}

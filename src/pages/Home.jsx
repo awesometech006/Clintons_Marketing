@@ -13,23 +13,39 @@ import BonusSection from "../pages/Home/BonusSection";
 import FinalCTAAndGuarantee from "../pages/Home/FinalCTAAndGuarantee";
 import PricingSection from "../pages/Home/PricingSection";
 import FAQSection from "../pages/Home/FAQSection_V2";
+import MarketingHub from "../pages/Home/MarketingHub";
+import WhyChooseUs from "../pages/Home/WhyChooseUs";
+import CategoriesSection from "../pages/Home/CategoriesSection";
+import TheVault from "../pages/Home/TheVault";
+import BuiltForEveryone from "../pages/Home/BuiltForEveryone";
+import Testimonials from "../pages/Home/Testimonials";
+import CallToAction from "../pages/Home/CallToAction";
 function Home() {
   return (
     <div>
       <HeroSection />
-      <FeaturesSection />
-      <SellingServices />
-      <DigitalProductsSection />
-      <SolutionSection />
-      <ProductShowcase />
-      <PLRProductUsage/>
-      <PLRMonetizationStrategies/>
-      <SuccessStories/>
-      <DigitalEmpireSection/>
-      <BonusSection/>
-      <FinalCTAAndGuarantee />
-      <PricingSection/>
-      <FAQSection/>
+      <MarketingHub />
+      <WhyChooseUs />
+      <CategoriesSection />
+      <TheVault />
+      <BuiltForEveryone />
+      <Testimonials />
+      <CallToAction />
+      {/* <Testimonials /> */}
+      
+      {/* <FeaturesSection /> */}
+      {/* <SellingServices /> */}
+      {/* <DigitalProductsSection /> */}
+      {/* <SolutionSection /> */}
+      {/* <ProductShowcase /> */}
+      {/* <PLRProductUsage/> */}
+      {/* <PLRMonetizationStrategies/> */}
+      {/* <SuccessStories/> */}
+      {/* <DigitalEmpireSection/> */}
+      {/* <BonusSection/> */}
+      {/* <FinalCTAAndGuarantee /> */}
+      {/* <PricingSection/> */}
+      {/* <FAQSection/> */}
       {/* Hero section, features, etc. */}
     </div>
   );
