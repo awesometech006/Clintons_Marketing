@@ -1,7 +1,8 @@
 /* --- BuiltForEveryone.css --- */
 .built-section {
     background-color: #ffffff;
-    padding: 6rem 1.5rem;
+    padding: 4rem 1.5rem 5rem 1.5rem;
+    /* Adjusted padding for mobile */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow: hidden;
     text-align: center;
@@ -15,28 +16,18 @@
 }
 
 .built-headline {
-    font-size: 2.25rem;
-    /* text-4xl */
+    font-size: 2rem;
+    /* text-3xl for mobile */
     font-weight: 800;
     /* font-extrabold */
     color: #111827;
-    margin-bottom: 2.5rem;
-}
-
-@media (min-width: 768px) {
-    .built-headline {
-        font-size: 3rem;
-        /* text-5xl */
-    }
+    margin-bottom: 2rem;
 }
 
 /* --- Tab Navigation --- */
 .built-tabs-nav {
     position: relative;
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #e5e7eb;
-    /* light gray border */
+    /* MOBILE-FIRST: No bottom border by default */
 }
 
 .built-tab-btn {
@@ -44,57 +35,56 @@
     font-weight: 600;
     color: #6b7280;
     /* gray-500 */
-    background: none;
+    background: #f3f4f6;
+    /* Light gray bg for mobile buttons */
     border: none;
+    border-radius: 0.5rem;
+    /* Rounded corners for mobile buttons */
     padding: 1rem 1.5rem;
     cursor: pointer;
-    transition: color 0.3s ease;
-    flex: 1;
-    max-width: 200px;
+    transition: all 0.3s ease;
+
+    /* MOBILE-FIRST: Full width, stacked */
+    display: block;
+    width: 100%;
+    text-align: left;
+    /* Align text left for a cleaner list */
+    margin-bottom: 0.5rem;
+    /* Space between stacked buttons */
+    border-left: 4px solid transparent;
+    /* Placeholder for active state */
 }
 
 .built-tab-btn.active {
     color: #d62976;
     /* Instagram Pink */
+    background-color: #ffffff;
+    /* White bg when active */
+    border-left-color: #d62976;
+    /* Active pink border on mobile */
+    box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
 }
 
 /* --- Animated Glider (Underline) --- */
 .built-tab-glider {
-    position: absolute;
-    bottom: -2px;
-    /* Sits on top of the border */
-    height: 4px;
-    width: 33.33%;
-    /* 1/3rd of the container */
-    background-image: linear-gradient(45deg, #fa7e1e, #d62976);
-    border-radius: 2px;
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-        left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Glider positioning based on activeTab class */
-.built-tab-glider.entrepreneurs {
-    left: 0;
-}
-
-.built-tab-glider.creators {
-    left: 33.33%;
-}
-
-.built-tab-glider.agencies {
-    left: 66.66%;
+    /* MOBILE-FIRST: Hide on mobile */
+    display: none;
 }
 
 /* --- Tab Content --- */
 .built-tab-content {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    /* Reduced margin-top for mobile */
     min-height: 60px;
     /* Prevents layout shift */
+    text-align: left;
+    /* Match tab button text */
 }
 
 .built-tab-content p {
-    font-size: 1.25rem;
-    /* text-xl */
+    font-size: 1.125rem;
+    /* text-lg */
     color: #374151;
     /* gray-700 */
     line-height: 1.75;
@@ -111,5 +101,88 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* --- DESKTOP STYLES (sm: 640px and up) --- */
+@media (min-width: 640px) {
+    .built-section {
+        padding: 6rem 1.5rem;
+        /* Restore desktop padding */
+    }
+
+    .built-headline {
+        font-size: 3rem;
+        /* text-5xl on desktop */
+    }
+
+    .built-tabs-nav {
+        /* Revert to horizontal layout */
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .built-tab-btn {
+        /* Revert to tab style */
+        display: inline-block;
+        width: auto;
+        /* Let it size to content */
+        flex: 1;
+        max-width: 200px;
+        background: none;
+        /* No bg on desktop */
+        border-radius: 0;
+        margin-bottom: 0;
+        text-align: center;
+        border-left: none;
+        /* Remove mobile active border */
+    }
+
+    .built-tab-btn.active {
+        background-color: transparent;
+        /* No bg on desktop */
+        border-left-color: transparent;
+        /* Remove mobile active border */
+        box-shadow: none;
+    }
+
+    /* --- Animated Glider (Underline) --- */
+    .built-tab-glider {
+        /* DESKTOP: Show the glider */
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        height: 4px;
+        width: 33.33%;
+        /* 1/3rd of the container */
+        background-image: linear-gradient(45deg, #fa7e1e, #d62976);
+        border-radius: 2px;
+        transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Glider positioning based on activeTab class */
+    .built-tab-glider.entrepreneurs {
+        left: 0;
+    }
+
+    .built-tab-glider.creators {
+        left: 33.33%;
+    }
+
+    .built-tab-glider.agencies {
+        left: 66.66%;
+    }
+
+    .built-tab-content {
+        margin-top: 2rem;
+        /* Restore desktop margin */
+        text-align: center;
+        /* Center content on desktop */
+    }
+
+    .built-tab-content p {
+        font-size: 1.25rem;
+        /* text-xl */
     }
 }
