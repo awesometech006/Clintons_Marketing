@@ -3,7 +3,7 @@ import { Check, ArrowRight } from 'lucide-react'; // Using lucide-react for chec
 
 // Component for a single pricing plan card
 const PricingCard = ({ plan, price, period, description, features, buttonText, isLifetime = false }) => (
-  <div className={`relative rounded-xl shadow-xl p-8 flex flex-col h-full ${isLifetime ? 'bg-black text-white' : 'bg-white text-gray-900 border border-gray-200'}`}>
+  <div className={`relative rounded-xl shadow-xl p-8 flex flex-col h-full ${isLifetime ? 'bg-black text-white' : 'bg-white text-gray-900 border border-gray-200'}`} id="pricing">
     {isLifetime && (
       <div className="absolute top-0 right-0 bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">
         50% OFF
@@ -21,7 +21,7 @@ const PricingCard = ({ plan, price, period, description, features, buttonText, i
       )}
     </div>
 
-    <ul className="space-y-3 flex-grow mb-8">
+    <ul className="space-y-3 flex-grow mb-8 ">
       {features.map((feature, index) => (
         <li key={index} className="flex items-center">
           <Check className={`w-5 h-5 mr-3 flex-shrink-0 ${isLifetime ? 'text-green-400' : 'text-green-600'}`} />
@@ -29,27 +29,37 @@ const PricingCard = ({ plan, price, period, description, features, buttonText, i
         </li>
       ))}
     </ul>
-
-    <button className={`w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm transition-colors duration-300
+    <div className={'w-full inline-flex items-center gap-4 justify-center  text-base font-medium rounded-full shadow-sm transition-colors duration-300'}>
+    <button className={`px-6 py-3 border border-transparent
       ${isLifetime 
         ? 'bg-green-500 text-black hover:bg-green-400' 
         : 'bg-black text-white hover:bg-gray-800'
       }`}>
-      {buttonText} <ArrowRight className="ml-3 -mr-1 h-5 w-5" />
+      Start Free <ArrowRight className="ml-3 -mr-1 h-5 w-5" />
     </button>
+    <button className={`px-6 py-3 border border-transparent
+      ${isLifetime 
+        ? 'bg-green-500 text-black hover:bg-green-400' 
+        : 'bg-black text-white hover:bg-gray-800'
+      }`}>
+      Upgrade Anytime <ArrowRight className="ml-3 -mr-1 h-5 w-5" />
+    </button>
+    </div>
+
   </div>
 );
 
 // Main Component
 const PricingSection = () => {
   const monthlyFeatures = [
-    'PLR License',
-    'Access to 1M+ PLR Products',
-    'Commercial Usage Rights',
-    'Unlimited Downloads',
-    'Regular Updates',
-    'Ready-to-Sell Templates',
-    'Basic Marketing Tools',
+    // 'PLR License',
+    // 'Access to 1M+ PLR Products',
+    // 'Commercial Usage Rights',
+    // 'Unlimited Downloads',
+    // 'Regular Updates',
+    // 'Ready-to-Sell Templates',
+    // 'Basic Marketing Tools',
+    'Curious Learners'
   ];
 
   const lifetimeFeatures = [
@@ -73,32 +83,48 @@ const PricingSection = () => {
 
         {/* Main Heading */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
-          Start Building Your <span className="bg-black text-white px-2 py-1 rounded-lg inline-block -rotate-1">Digital Empire</span>
+          Choose the Right Plan for Your <span className="bg-black text-white px-2 py-1 rounded-lg inline-block -rotate-1">Digital Journey.</span>
         </h2>
 
         {/* Subheading */}
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-16">
+        {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-16">
           Choose the perfect plan to kickstart your digital product business
-        </p>
+        </p> */}
 
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
           <PricingCard
-            plan="Monthly"
-            description="Perfect for getting started with PLR products"
-            price="₹99"
+            plan="Free Explorer"
+            description="Browse & download selected assets"
+            price="₹0"
             period="/month"
-            features={monthlyFeatures}
+            features={['Curious Learners']}
             buttonText="Get Instant Access"
           />
           <PricingCard
-            plan="Lifetime"
-            description="Best value for long-term success"
+            plan="Creator Pro"
+            description="Upload 10 products, earn 80% commission, analytics access"
             price="₹499"
-            period=" one-time"
-            features={lifetimeFeatures}
+            period="/month"
+            features={['Individual Creators']}
             buttonText="Get Lifetime Access"
             isLifetime={true}
+          />
+          <PricingCard
+            plan="Vault Access"
+            description="Unlimited downloads, product drops, and premium assets"
+            price="₹999"
+            period="/month"
+            features={['Entrepreneurs']}
+            buttonText="Get Instant Access"
+          />
+          <PricingCard
+            plan="Agency Suite"
+            description="Unlimited uploads, white-label license, API & support"
+            price="₹2999"
+            period="/month"
+            features={['Agencies & Teams']}
+            buttonText="Get Instant Access"
           />
         </div>
       </div>

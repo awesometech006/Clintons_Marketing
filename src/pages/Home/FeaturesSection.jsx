@@ -34,26 +34,31 @@ const GiftIcon = (props) => (
 const featuresLeft = [
   {
     icon: <TrendingUpIcon className="w-8 h-8 text-black" />,
-    title: 'Sell Instantly',
-    description: 'Simply resell or promote the content with your own branding.',
+    title: 'Creator-Focused',
+    description: 'Upload, license, and earn with zero tech hassle.',
   },
   {
     icon: <GraduationCapIcon className="w-8 h-8 text-black" />,
-    title: 'Sell DIY Courses',
-    description: 'Merge different materials to build a comprehensive course.',
+    title: 'Verified Quality',
+    description: ' Every digital product is reviewed for quality, design, and performance.',
+  },
+    {
+    icon: <GiftIcon className="w-8 h-8 text-black" />,
+    title: 'Global Reach',
+    description: 'Sell and buy from anywhere. Your market is the world.',
   },
 ];
 
 const featuresRight = [
   {
     icon: <BundleIcon className="w-8 h-8 text-black" />,
-    title: 'Sell in Bundles',
-    description: 'Group products together and sell as one package.',
+    title: 'Flexible Licensing',
+    description: ' Personal, commercial, or resell rights — you choose how your asset is used',
   },
   {
     icon: <GiftIcon className="w-8 h-8 text-black" />,
-    title: 'Give Away for Free',
-    description: 'Use as lead magnets or include as free bonuses.',
+    title: 'Real-Time Analytics',
+    description: ' Personal, commercial, or resell rights — you choose how your asset is used',
   },
 ];
 
@@ -75,7 +80,7 @@ const FeaturesSection = () => {
             Your Tools. Your Terms. Your Success
           </p>
           <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900">
-            <span className="px-4 py-2 bg-black text-[#B1F35F] rounded-2xl">No Middleman</span> just you and your hustle!
+            <span className="px-4 py-2 bg-black text-[#B1F35F] rounded-2xl">Why Choose Us</span> 
           </h2>
           <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-zinc-600">
             Digital products, made for you and ready to sell. It's never been easier—<span className="italic text-[#F26B54]">pick your product, market it, and start profiting!</span>

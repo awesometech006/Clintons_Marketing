@@ -2,29 +2,71 @@ import React from "react";
 
 const services = [
   {
-    title: "Canva Templates",
+    title: "AI Prompts & Workflows",
     count: "5,000+",
     description:
-      "Premium design templates for social media, presentations, marketing materials, and branding assets. Perfect for creating professional visual content across all platforms.",
+      "Master ChatGPT, Midjourney, and automation systems.",
     tag: "Sell as branded templates",
     imageUrl:
       "https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/67f60c430a62177682d341d3.jpeg",
   },
   {
-    title: "Notion Templates",
+    title: "Brand Kits & Templates",
     count: "1,000+",
     description:
-      "Comprehensive productivity and organization templates for businesses, students, and professionals. Includes project management, goal tracking, and knowledge management systems.",
+      "Logos, social media packs, and full identity systems.",
     tag: "Sell as productivity solutions",
     imageUrl:
       "https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/67f60c430a62175110d341d2.jpeg",
   },
   {
-    title: "Video Courses",
+    title: "Marketing Funnels & Tools",
     count: "500+",
     description:
-      "Professional video courses covering business, marketing, personal development, and technical skills. Complete with worksheets, assignments, and certification materials.",
+      "Ready-to-launch ad creatives, email systems, and landing pages.",
     tag: "Rebrand and sell online courses",
+    imageUrl:
+      "https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/67f60c440a62172ccad341d8.jpeg",
+  },
+    {
+    title: "Courses & eBooks",
+    count: "5,000+",
+    description:
+      "Learn high-income skills in hours",
+    tag: "Sell as branded templates",
+    imageUrl:
+      "https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/67f60c430a62177682d341d3.jpeg",
+  },
+  {
+    title: "Ready-to-Launch Business Kits",
+    count: "1,000+",
+    description:
+      "Buy entire brands, products, and digital franchises",
+    tag: "Sell as productivity solutions",
+    imageUrl:
+      "https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/67f60c430a62175110d341d2.jpeg",
+  },
+  {
+    title: "Resell-Ready Assets",
+    count: "500+",
+    description:
+      "Earn instantly with PLR and white-label products",
+    imageUrl:
+      "https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/67f60c440a62172ccad341d8.jpeg",
+  },
+    {
+    title: "3D Models & Motion Graphics",
+    count: "500+",
+    description:
+      "Earn instantly",
+    imageUrl:
+      "https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/67f60c440a62172ccad341d8.jpeg",
+  },
+      {
+    title: "Marketing Assets",
+    count: "500+",
+    description:
+      "Earn instantly",
     imageUrl:
       "https://storage.googleapis.com/msgsndr/0iO3mS8O2ALa5vmXwP3d/media/67f60c440a62172ccad341d8.jpeg",
   },
@@ -43,8 +85,8 @@ const SellingServices = () => {
         </p>
 
         <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-          Everything You Need to{" "}
-          <span className="text-[#c6ff3e]">Start Selling Online</span>
+           Explore Digital Categories{" "}
+          {/* <span className="text-[#c6ff3e]">Start Selling Online</span> */}
         </h2>
 
         <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-400">

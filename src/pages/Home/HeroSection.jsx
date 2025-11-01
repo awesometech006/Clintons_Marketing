@@ -37,22 +37,24 @@ function HeroSection() {
       {/* Hero Section */}
       <div className="relative z-10 text-center py-24 px-6">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-          Start Your <br className="hidden md:block" />
-          Digital Business with <br className="hidden md:block" />
-          <span className="bg-[#c6ff3e] text-black px-3 py-1 rounded-md inline-block mt-2">
+         The Future of  <br className="hidden md:block" />
+         Digital Commerce <br className="hidden md:block" />
+          {/* <span className="bg-[#c6ff3e] text-black px-3 py-1 rounded-md inline-block mt-2">
             1 Million+
-          </span>{" "}
-          PLR Products
+          </span>{" "} */}
+          Starts Here
         </h1>
 
         <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-          Infinite collection of templates, video courses, ebooks and more. Ready
-          for you to sell or use any way you want.
+Discover, Create, and Scale with the world’s most advanced platform for digital assets, creators, and entrepreneurs
         </p>
 
         <div className="mt-10">
-          <button className="bg-[#c6ff3e] text-black font-semibold px-6 py-3 rounded-md hover:opacity-90 transition">
-            GET LIFETIME ACCESS →
+          <button className="mr-10 bg-[#c6ff3e] text-black font-semibold px-6 py-3 rounded-md hover:opacity-90 transition">
+            Explore The Vault →
+          </button>
+          <button className="mr-10 bg-[#c6ff3e] text-black font-semibold px-6 py-3 rounded-md hover:opacity-90 transition">
+            Become a Creator →
           </button>
         </div>
 

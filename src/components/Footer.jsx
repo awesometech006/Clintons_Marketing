@@ -20,10 +20,10 @@ function Footer() {
         <div>
           <h4 className="font-semibold mb-4">Products</h4>
           <ul className="space-y-2 text-gray-400 text-sm">
-            <li><Link to="/products" className="hover:text-[#a8ff60]">Browse Products</Link></li>
-            <li><Link to="/pricing" className="hover:text-[#a8ff60]">Pricing</Link></li>
-            <li><Link to="/case-studies" className="hover:text-[#a8ff60]">Case Studies</Link></li>
-            <li><Link to="/faq" className="hover:text-[#a8ff60]">FAQ</Link></li>
+            <li><a href="#bout" className="hover:text-[#a8ff60]">About</a></li>
+            <li><a href="#creator" className="hover:text-[#a8ff60]">Creator</a></li>
+            <li><a href="#community" className="hover:text-[#a8ff60]">Community</a></li>
+            <li><a href="#pricing" className="hover:text-[#a8ff60]">Pricing</a></li>
           </ul>
         </div>
 
@@ -53,8 +53,9 @@ function Footer() {
       <div className="border-t border-neutral-800 mt-8 py-6 px-6 text-sm text-gray-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
           <div className="text-center md:text-left">
-            <p>© 2024 90 Caliber. All rights reserved.</p>
-            <p className="text-xs text-gray-600">Coaching Marketing Kit LLC</p>
+            <p>© 2025 Clinton's Marketing Hub.</p>
+            <p className="text-xs text-gray-600">Built by creators, for creators.</p>
+            <p className="text-xs text-gray-600">Empowering the next generation of digital entrepreneurs.</p>
           </div>
 
           <div className="flex space-x-6 text-gray-400">
