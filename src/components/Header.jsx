@@ -8,36 +8,42 @@ function Header() {
         {/* Logo Section */}
         <a to="/" className="flex items-center space-x-2">
           <div className="flex items-center space-x-1">
-            <span className="text-[#a8ff60] font-bold text-lg">90 Caliber</span>
+            <span className="text-[#feda75] font-bold text-lg">90 Caliber</span>
           </div>
         </a>
 
-        {/* Nav Links */}
+        {/* Nav Links - UPDATED */}
         <nav className="flex items-center space-x-8">
-          <a
-            href="#about"
-            class="text-sm font-medium hover:text-[#a8ff60] transition-colors"
+          <Link
+            to="/about"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
           >
             About
-          </a>
-          <a
-            href="#creator"
-            className="text-sm font-medium hover:text-[#a8ff60] transition-colors"
+          </Link>
+          <Link
+            to="/creator"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
           >
             Creator
-          </a>
-          <a
-            href="#community"
-            className="text-sm font-medium hover:text-[#a8ff60] transition-colors"
-          >
-            Community
-          </a>
-          <a
-           href="#pricing"
-            className="text-sm font-medium hover:text-[#a8ff60] transition-colors"
+          </Link>
+          <Link
+            to="/pricing"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
           >
             Pricing
-          </a>
+          </Link>
+          <Link
+            to="/community"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
+          >
+            Community
+          </Link>
+          <Link
+            to="/roadmap"
+            className="text-sm font-medium hover:text-[#d62976] transition-colors"
+          >
+            Future Roadmap
+          </Link>
         </nav>
       </div>
     </header>

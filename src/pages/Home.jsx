@@ -13,39 +13,39 @@ import BonusSection from "../pages/Home/BonusSection";
 import FinalCTAAndGuarantee from "../pages/Home/FinalCTAAndGuarantee";
 import PricingSection from "../pages/Home/PricingSection";
 import FAQSection from "../pages/Home/FAQSection_V2";
-import RichTextSection from "../pages/Home/RichTextSection";
-import TestinomonialSection from "../pages/Home/TestinomonialSection";
-import AboutSection from "../pages/Home/AboutSection";
-import CreatorLanding from "../pages/Home/CreatorLanding";
-import FutureRoadmap from "../pages/Home/FutureRoadmap"
+import MarketingHub from "../pages/Home/MarketingHub";
+import WhyChooseUs from "../pages/Home/WhyChooseUs";
+import CategoriesSection from "../pages/Home/CategoriesSection";
+import TheVault from "../pages/Home/TheVault";
+import BuiltForEveryone from "../pages/Home/BuiltForEveryone";
+import Testimonials from "../pages/Home/Testimonials";
+import CallToAction from "../pages/Home/CallToAction";
 function Home() {
   return (
     <div>
       <HeroSection />
-      <RichTextSection title="What Is 90caliber Caliber Global Academy?" description="Clinton’s Marketing Hub is your all-in-one digital powerhouse — where creators sell smarter, entrepreneurs build faster, and businesses find everything they need to grow."
-      secondaryText="We bring together digital products, marketing kits, AI tools, and automation systems into one intelligent platform — a place where every click leads to opportunity."
-      />
-      <FeaturesSection />
-      <SellingServices />
-            <RichTextSection tag="The Vault – Unlimited Access
-" title="Welcome to the digital goldmine" description="Unlock thousands of premium assets, exclusive bundles, and AI-powered business tools inside The Vault — our members-only library for entrepreneurs and creators who want unlimited downloads, product drops, and early access to new assets." button="Join The Vault"
-      />
-            <DigitalProductsSection />
-      <TestinomonialSection />
-<AboutSection />
-     <CreatorLanding/>
-     <FutureRoadmap />
-      {/* <SolutionSection />
-      <ProductShowcase /> */}
-      <PLRProductUsage/>
-      <PLRMonetizationStrategies/>
-      <SuccessStories/>
- 
+      <MarketingHub />
+      <WhyChooseUs />
+      <CategoriesSection />
+      <TheVault />
+      <BuiltForEveryone />
+      <Testimonials />
+      <CallToAction />
+      {/* <Testimonials /> */}
+      
+      {/* <FeaturesSection /> */}
+      {/* <SellingServices /> */}
+      {/* <DigitalProductsSection /> */}
+      {/* <SolutionSection /> */}
+      {/* <ProductShowcase /> */}
+      {/* <PLRProductUsage/> */}
+      {/* <PLRMonetizationStrategies/> */}
+      {/* <SuccessStories/> */}
       {/* <DigitalEmpireSection/> */}
       {/* <BonusSection/> */}
       {/* <FinalCTAAndGuarantee /> */}
-      <PricingSection/>
-      <FAQSection/>
+      {/* <PricingSection/> */}
+      {/* <FAQSection/> */}
       {/* Hero section, features, etc. */}
     </div>
   );

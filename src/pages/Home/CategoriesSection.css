@@ -1,0 +1,166 @@
+/* --- CategoriesSection.css --- */
+
+.categories-section {
+    background-color: #000000;
+    /* Black background */
+    padding: 6rem 0;
+    /* More padding on top/bottom */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    /* This is crucial for the marquee */
+}
+
+.categories-container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.categories-headline {
+    font-size: 2.25rem;
+    /* text-4xl */
+    font-weight: 800;
+    /* font-extrabold */
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: #ffffff;
+    /* White text */
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .categories-headline {
+        font-size: 3rem;
+        /* text-5xl */
+    }
+}
+
+/* --- Marquee Wrapper & Fading Edges --- */
+.categories-marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Fades the edges of the marquee for a smooth entry/exit */
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+}
+
+.categories-marquee {
+    width: 100%;
+    overflow: hidden;
+    /* Hides the non-visible part of the track */
+}
+
+.marquee-track {
+    display: flex;
+    /* We use flex-shrink: 0 to prevent items from shrinking */
+    flex-shrink: 0;
+    /* Will be animated */
+}
+
+.marquee-left .marquee-track {
+    animation: scroll-left 40s linear infinite;
+}
+
+.marquee-right .marquee-track {
+    animation: scroll-right 40s linear infinite;
+}
+
+/* Pause animation on hover - a very cool effect */
+.categories-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* --- Marquee Cards --- */
+.marquee-item {
+    width: 320px;
+    /* Fixed width for each card */
+    flex-shrink: 0;
+    padding: 1.5rem;
+    margin: 0 0.75rem;
+    /* gap */
+    background-color: #1a1a1a;
+    /* Dark gray card */
+    border: 1px solid #333;
+    border-radius: 0.75rem;
+    /* rounded-xl */
+    transition: background-color 0.3s ease;
+}
+
+.marquee-item:hover {
+    background-color: #2a2a2a;
+    /* Lighten on hover */
+}
+
+.item-name {
+    display: block;
+    font-size: 1.125rem;
+    /* text-lg */
+    font-weight: 600;
+    /* font-semibold */
+    /* Use the Instagram pink for an accent */
+    color: #d62976;
+    margin-bottom: 0.5rem;
+}
+
+.item-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #a0a0a0;
+    /* Light gray text */
+}
+
+/* --- Marquee Keyframes --- */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    /* Animate to -50% because the track is 200% wide */
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* --- CTA Button --- */
+.categories-cta-container {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.categories-cta-btn {
+    /* Re-using the gradient button style */
+    background-image: linear-gradient(45deg, #fa7e1e, #d62976);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.categories-cta-btn:hover {
+    opacity: 0.9;
+}

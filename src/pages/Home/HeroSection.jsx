@@ -1,85 +1,52 @@
 import React from "react";
+import AnimatedHeroBackground from "./AnimatedHeroBackground";
+import "../../styles/global.css" // <-- IMPORT THE CSS FILE HERE
 
 function HeroSection() {
   return (
-    <section className="relative bg-black text-white overflow-hidden">
-      {/* ✅ Marquee Bar */}
-      <div className="bg-[#c6ff3e] text-black font-semibold text-sm py-2 overflow-hidden">
-        <div className="marquee relative flex whitespace-nowrap">
-          <span className="mx-6">
-            ⚡ EARLY BIRD SALE - Lock in your $7 Launch Price
-          </span>
-          <span className="mx-6">
-            ⚡ EARLY BIRD SALE - Lock in your $7 Launch Price
-          </span>
-          <span className="mx-6">
-            ⚡ EARLY BIRD SALE - Lock in your $7 Launch Price
-          </span>
-          <span className="mx-6">
-            ⚡ EARLY BIRD SALE - Lock in your $7 Launch Price
-          </span>
-          {/* Duplicate for seamless scroll */}
-          <span className="mx-6">
-            ⚡ EARLY BIRD SALE - Lock in your $7 Launch Price
-          </span>
-          <span className="mx-6">
-            ⚡ EARLY BIRD SALE - Lock in your $7 Launch Price
-          </span>
-          <span className="mx-6">
-            ⚡ EARLY BIRD SALE - Lock in your $7 Launch Price
-          </span>
-          <span className="mx-6">
-            ⚡ EARLY BIRD SALE - Lock in your $7 Launch Price
-          </span>
-        </div>
+    <section className="hero-section">
+
+      {/* --- Background Visual --- */}
+      <div className="hero-background">
+        <AnimatedHeroBackground />
       </div>
 
-      {/* Hero Section */}
-      <div className="relative z-10 text-center py-24 px-6">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-         The Future of  <br className="hidden md:block" />
-         Digital Commerce <br className="hidden md:block" />
-          {/* <span className="bg-[#c6ff3e] text-black px-3 py-1 rounded-md inline-block mt-2">
-            1 Million+
-          </span>{" "} */}
-          Starts Here
+      {/* --- Foreground Content --- */}
+      <div className="hero-content">
+        <h1>
+          The Future of Digital <br /> Commerce Starts Here.
         </h1>
 
-        <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-Discover, Create, and Scale with the world’s most advanced platform for digital assets, creators, and entrepreneurs
+        <p>
+          Discover, Create, and Scale with the world’s most advanced platform
+          for digital assets, creators, and entrepreneurs.
         </p>
 
-        <div className="mt-10">
-          <button className="mr-10 bg-[#c6ff3e] text-black font-semibold px-6 py-3 rounded-md hover:opacity-90 transition">
-            Explore The Vault →
-          </button>
-          <button className="mr-10 bg-[#c6ff3e] text-black font-semibold px-6 py-3 rounded-md hover:opacity-90 transition">
-            Become a Creator →
-          </button>
-        </div>
-
-        {/* Trusted Section */}
-        <div className="mt-10 flex flex-col items-center">
-          <div className="flex -space-x-3">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <img
-                key={i}
-                src={`https://i.pravatar.cc/50?img=${i}`}
-                alt="User"
-                className="w-10 h-10 rounded-full border-2 border-black"
+        {/* CTA Buttons */}
+        <div className="hero-buttons">
+          <button className="btn btn-primary">
+            {/* SVG icon for a right arrow */}
+            <svg
+              className="btn-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
-            ))}
-          </div>
-
-          <div className="flex items-center mt-3 space-x-2 text-sm text-gray-400">
-            <span className="text-[#c6ff3e]">★★★★★</span>
-            <span>Trusted by Solopreneurs</span>
-          </div>
+            </svg>
+            Explore The Vault
+          </button>
+          <button className="btn btn-secondary">
+            Become a Creator
+          </button>
         </div>
       </div>
 
-      {/* Background grid effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:24px_24px] pointer-events-none" />
     </section>
   );
 }
