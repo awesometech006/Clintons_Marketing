@@ -1,0 +1,195 @@
+/* --- RoadmapAlt.css --- */
+.roadmap-alt-page {
+    /* This is the core: fix the page, hide all overflow */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* --- Scroll Hint --- */
+.scroll-hint {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #777;
+    font-size: 0.8rem;
+    animation: fade-in-out 3s ease-in-out infinite;
+}
+
+.mouse-icon {
+    width: 24px;
+    height: 40px;
+    border: 2px solid #777;
+    border-radius: 12px;
+    position: relative;
+}
+
+.mouse-wheel {
+    width: 4px;
+    height: 8px;
+    background-color: #777;
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-wheel {
+    0% {
+        top: 6px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 20px;
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-out {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* --- Horizontal Track --- */
+.roadmap-track {
+    display: flex;
+    /* Aligns slides horizontally */
+    height: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+
+    /* This provides the smooth "snap-back" and scroll */
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.roadmap-slide {
+    width: 100vw;
+    /* Each slide is full viewport width */
+    height: 100vh;
+    flex-shrink: 0;
+    /* Prevents slides from shrinking */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* --- Background Orbs --- */
+.slide-bg-orb {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    filter: blur(120px);
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.orb-pink {
+    background-color: #d62976;
+}
+
+.orb-yellow {
+    background-color: #feda75;
+}
+
+.orb-orange {
+    background-color: #fa7e1e;
+}
+
+.orb-blue {
+    background-color: #4f5bd5;
+}
+
+.orb-purple {
+    background-color: #962fbf;
+}
+
+/* --- Slide Content --- */
+.slide-content {
+    text-align: center;
+    z-index: 10;
+    max-width: 700px;
+    color: #fff;
+    /* Parallax effect transition */
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.intro-headline {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background-image: linear-gradient(45deg, #feda75, #d62976);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.slide-phase {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #d62976;
+    /* Pink */
+    margin-bottom: 1rem;
+}
+
+.slide-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.slide-desc {
+    font-size: 1.125rem;
+    color: #aaa;
+    line-height: 1.75;
+}
+
+/* Last slide styling */
+.end-slide .slide-desc {
+    font-size: 1.5rem;
+    color: #feda75;
+    /* Yellow */
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .intro-headline {
+        font-size: 4rem;
+    }
+
+    .slide-title {
+        font-size: 4rem;
+    }
+
+    .slide-desc {
+        font-size: 1.25rem;
+    }
+}

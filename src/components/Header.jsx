@@ -80,7 +80,7 @@ function Header() {
             to="/roadmap"
             className="text-sm font-medium hover:text-[#d62976] transition-colors"
           >
-            Future Roadmap
+            Future roadmap
           </Link>
         </nav>
 
@@ -151,7 +151,7 @@ function Header() {
             className="text-2xl font-medium hover:text-[#d62976] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Future Roadmap
+            Future roadmap
           </Link>
         </nav>
       </div>

@@ -1,0 +1,154 @@
+/* --- CreatorHero.css --- */
+.creator-hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 6rem 1.5rem;
+    text-align: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.creator-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+}
+
+.creator-hero-headline {
+    font-size: 2.5rem;
+    /* Mobile */
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    color: #fff;
+}
+
+.creator-hero-subheadline {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #feda75;
+    /* Instagram Yellow */
+    margin-top: 1rem;
+}
+
+.creator-hero-intro {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #d1d5db;
+    max-width: 600px;
+    margin: 1.5rem auto 0 auto;
+}
+
+@media (min-width: 768px) {
+    .creator-hero-headline {
+        font-size: 4.5rem;
+        /* Desktop */
+    }
+
+    .creator-hero-subheadline {
+        font-size: 1.5rem;
+    }
+
+    .creator-hero-intro {
+        font-size: 1.125rem;
+    }
+}
+
+/* --- Digital Pipeline Animation --- */
+.pipeline-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.15;
+    /* Subtle */
+    filter: blur(5px);
+}
+
+.pipeline-icon {
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: pulse-icon 2.5s ease-in-out infinite;
+}
+
+.pipeline-icon.upload {
+    left: 10%;
+}
+
+.pipeline-icon.vault {
+    right: 10%;
+    color: #feda75;
+}
+
+.pipeline-stream {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+    background-image: linear-gradient(to right, #feda75, #d62976);
+}
+
+.pipeline-asset {
+    position: absolute;
+    font-size: 2rem;
+    top: -1rem;
+    transform: translateX(-50%);
+    animation: stream-asset 10s linear infinite;
+}
+
+.pipeline-asset.template {
+    animation-delay: 0s;
+}
+
+.pipeline-asset.course {
+    animation-delay: 3.3s;
+}
+
+.pipeline-asset.tool {
+    color: #962fbf;
+    animation-delay: 6.6s;
+}
+
+@keyframes pulse-icon {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.1);
+    }
+}
+
+@keyframes stream-asset {
+    0% {
+        left: 0%;
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+
+    90% {
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+    }
+
+    100% {
+        left: 100%;
+        opacity: 0;
+        transform: scale(0.5) rotate(360deg);
+    }
+}

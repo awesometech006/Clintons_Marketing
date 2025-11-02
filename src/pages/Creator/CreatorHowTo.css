@@ -1,0 +1,136 @@
+/* --- CreatorHowTo.css --- */
+.creator-howto-section {
+    background-color: #000;
+    padding: 6rem 1.5rem;
+    position: relative;
+}
+
+.creator-howto-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* The vertical line */
+.timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #333;
+    /* Default line color */
+}
+
+/* The animated "fill" line */
+.timeline-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #feda75, #d62976);
+    transform: scaleY(0);
+    /* Hidden by default */
+    transform-origin: top;
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Animate line when section is visible */
+.creator-howto-section.is-visible .timeline-line::before {
+    transform: scaleY(1);
+}
+
+.timeline-step {
+    position: relative;
+    padding-left: 60px;
+    /* Space for the node and line */
+    margin-bottom: 3rem;
+
+    /* Animation: Fade in */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animate steps when section is visible */
+.creator-howto-section.is-visible .timeline-step {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger the animation */
+.creator-howto-section.is-visible .timeline-step:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.creator-howto-section.is-visible .timeline-step:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.creator-howto-section.is-visible .timeline-step:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.creator-howto-section.is-visible .timeline-step:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+/* The circle node */
+.timeline-node {
+    position: absolute;
+    left: 8px;
+    /* Centered on the 4px line */
+    top: 4px;
+    width: 28px;
+    height: 28px;
+    background-color: #000;
+    border: 4px solid #d62976;
+    /* Pink border */
+    border-radius: 50%;
+    z-index: 10;
+
+    /* Pulse animation */
+    transform: scale(0);
+    transition: transform 0.5s ease-out;
+}
+
+/* Animate node when section is visible */
+.creator-howto-section.is-visible .timeline-node {
+    transform: scale(1);
+}
+
+/* Stagger the node animation */
+.creator-howto-section.is-visible .timeline-step:nth-child(1) .timeline-node {
+    transition-delay: 0.2s;
+}
+
+.creator-howto-section.is-visible .timeline-step:nth-child(2) .timeline-node {
+    transition-delay: 0.4s;
+}
+
+.creator-howto-section.is-visible .timeline-step:nth-child(3) .timeline-node {
+    transition-delay: 0.6s;
+}
+
+.creator-howto-section.is-visible .timeline-step:nth-child(4) .timeline-node {
+    transition-delay: 0.8s;
+}
+
+.timeline-content {
+    position: relative;
+}
+
+.timeline-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #d1d5db;
+}

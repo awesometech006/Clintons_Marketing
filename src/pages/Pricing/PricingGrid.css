@@ -1,0 +1,27 @@
+/* --- PricingGrid.css --- */
+.pricing-grid-section {
+    padding: 2rem 1.5rem 6rem 1.5rem;
+}
+
+.pricing-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Mobile: 1 column */
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .pricing-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Tablet: 2 columns */
+    }
+}
+
+@media (min-width: 1200px) {
+    .pricing-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        /* Desktop: 4 columns */
+    }
+}

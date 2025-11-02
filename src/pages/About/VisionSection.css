@@ -1,0 +1,45 @@
+/* --- VisionSection.css --- */
+.about-vision-section {
+    background-color: #000;
+    /* Dark background */
+    padding: 6rem 1.5rem;
+    color: #d1d5db;
+    /* Light gray text */
+}
+
+.about-vision-container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.about-vision-paragraph {
+    font-size: 1.125rem;
+    /* text-lg */
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0;
+    /* Hidden by default for animation */
+    transform: translateY(20px);
+    /* Starts slightly below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    /* Staggered fade-in */
+}
+
+.about-vision-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+/* Animation trigger class */
+.fade-in-animation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+    .about-vision-paragraph {
+        font-size: 1.25rem;
+        /* text-xl on desktop */
+    }
+}

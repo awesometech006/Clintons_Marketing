@@ -1,0 +1,84 @@
+/* --- RoadmapStickyVisual.css --- */
+.sticky-visual-container {
+    position: relative;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: #111;
+    border: 1px solid #333;
+    overflow: hidden;
+    /* For the content animation */
+}
+
+/* --- Progress Bar --- */
+.progress-bar {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    height: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.progress-segment {
+    flex: 1;
+    height: 100%;
+    background-color: #444;
+    border-radius: 3px;
+    transform: scaleX(0);
+    /* Hidden by default */
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+        background-image 0.5s ease,
+        background-color 0.5s ease;
+}
+
+/* Animate in when active/completed */
+.progress-segment.completed {
+    background-image: linear-gradient(45deg, #feda75, #d62976);
+    transform: scaleX(1);
+}
+
+/* --- Animated Text --- */
+.phase-content-wrapper {
+    position: relative;
+    height: 150px;
+    /* Fixed height for content to slide in/out */
+}
+
+.phase-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* Animation properties */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.phase-content.is-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.phase-number {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #d62976;
+    margin-bottom: 0.5rem;
+}
+
+.phase-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+@media (min-width: 1024px) {
+    .phase-title {
+        font-size: 2.5rem;
+    }
+}

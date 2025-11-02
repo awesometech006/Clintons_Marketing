@@ -1,0 +1,171 @@
+/* --- CommunityFeatures.css --- */
+.features-section {
+    padding-top: 0;
+    /* CHANGED */
+    padding-bottom: 6rem;
+    padding-left: 0;
+    padding-right: 0;
+    /* No horizontal padding, scroller is full-width */
+    background-color: #000;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    /* Standard padding for headlines */
+    text-align: center;
+}
+
+.features-headline {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.features-subheadline {
+    font-size: 1.125rem;
+    color: #aaa;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .features-headline {
+        font-size: 3rem;
+    }
+}
+
+/* --- Horizontal Scroller --- */
+.features-scroller-wrapper {
+    overflow-x: auto;
+    /* Hides scrollbar for a cleaner look */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.features-scroller-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.features-scroller-inner {
+    display: flex;
+    width: -moz-fit-content;
+    /* Firefox */
+    width: fit-content;
+    padding: 1rem 1.5rem;
+    /* Padding on the scroller itself */
+}
+
+/* --- Feature Card with Background Image & Mouse-Follow Glow --- */
+.feature-card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+    border-radius: 1rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    /* Indicate interactivity */
+
+    /* --- Background Image Styling --- */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-out;
+    /* Subtle zoom on hover */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    /* Lift and slightly zoom */
+}
+
+/* --- Overlay for Text Readability --- */
+.feature-card-overlay {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            /* Dark at bottom */
+            rgba(0, 0, 0, 0.5) 50%,
+            /* Medium in middle */
+            rgba(0, 0, 0, 0.2) 100%
+            /* Lighter at top */
+        );
+    z-index: 0;
+    /* Below content, above glow */
+}
+
+
+/* The Spotlight/Glow Effect */
+.feature-card::before {
+    content: "";
+    position: absolute;
+    left: var(--mouse-x-glow);
+    top: var(--mouse-y-glow);
+    width: 400px;
+    height: 400px;
+    background-image: radial-gradient(circle at center,
+            rgba(214, 41, 118, 0.3) 0%,
+            /* Pink */
+            transparent 60%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    /* Above overlay */
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card-content {
+    position: relative;
+    z-index: 2;
+    /* Above the glow */
+}
+
+.feature-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Text shadow for readability */
+}
+
+.feature-card-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #aaa;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    /* Text shadow for readability */
+}
+
+/* "Peek" card at the end */
+.feature-card-peek {
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #555;
+    padding: 0 1.5rem;
+    text-align: center;
+}

@@ -1,0 +1,77 @@
+/* --- CommunityCTA.css --- */
+.community-cta-section {
+    padding: 6rem 1.5rem;
+    text-align: center;
+    /* Full Instagram Gradient Background */
+    background: linear-gradient(-45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-size: 400% 400%;
+    animation: gradient-pan 15s ease infinite;
+}
+
+@keyframes gradient-pan {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.community-cta-headline {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .community-cta-headline {
+        font-size: 3rem;
+    }
+}
+
+/* --- Breathing/Pulsing Button --- */
+.community-cta-btn {
+    background-color: #fff;
+    color: #d62976;
+    /* Pink */
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    /* Animation */
+    animation: pulse-button 2.5s infinite;
+}
+
+.community-cta-btn:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-out;
+}
+
+@keyframes pulse-button {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+}

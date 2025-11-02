@@ -1,0 +1,124 @@
+/* --- PricingCard.css --- */
+.pricing-card {
+    position: relative;
+    padding: 2.5rem 2rem;
+    border-radius: 1.25rem;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+
+    /* Default state for transition */
+    transform: perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+}
+
+/* Featured card gets the gradient and a small lift */
+.pricing-card.featured {
+    background-image: linear-gradient(135deg, #d62976, #962fbf);
+    border: none;
+    transform: scale(1.03);
+    /* Sits slightly larger */
+}
+
+/* This inner div gets "lifted" in 3D space */
+.card-content {
+    transform: translateZ(20px);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(45deg, #feda75, #fa7e1e);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 99px;
+    box-shadow: 0 4px 10px rgba(250, 126, 30, 0.3);
+}
+
+.card-plan-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.pricing-card.featured .card-plan-name {
+    color: #feda75;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.6;
+    min-height: 60px;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-card.featured .card-description {
+    color: #f3f4f6;
+}
+
+.card-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.price-per-month {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #aaa;
+    margin-left: 0.25rem;
+}
+
+.card-ideal-for {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #d62976;
+    margin-bottom: 2rem;
+}
+
+.pricing-card.featured .card-ideal-for {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* --- Card CTA Buttons --- */
+.card-cta-btn {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-cta-btn:hover {
+    background-color: #444;
+    border-color: #777;
+}
+
+/* Featured button is bright */
+.card-cta-btn.featured-btn {
+    background-color: #fff;
+    color: #d62976;
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.card-cta-btn.featured-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
